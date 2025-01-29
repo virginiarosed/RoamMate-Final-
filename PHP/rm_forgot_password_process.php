@@ -1,6 +1,6 @@
 <?php
 // Include PHPMailer autoloader and use statements at the top
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
