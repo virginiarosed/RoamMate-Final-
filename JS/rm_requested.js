@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (duration === 1 && nights === 0) {
                 durationText.innerHTML = "<b>Duration:</b> Roundtrip";
             } else {
-                // Update the duration text normally
+                // Update the duration text
                 durationText.innerHTML = `<b>Duration:</b> ${duration} ${dayText}, ${nights} ${nightText}`;
             }
     
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             durationText.innerHTML = `<b>Duration:</b> Invalid Dates`;
             mainDayContainer.innerHTML = ""; // Clear day containers
-            document.querySelector('.add-itinerary-btn').style.display = 'none'; // Hide the button if dates are invalid
+            document.querySelector('.add-itinerary-btn').style.display = 'none';
         }
     }
 
@@ -51,9 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
         requiredFields.forEach(field => {
             if (!field.value.trim()) {
                 allFieldsValid = false;
-                field.classList.add("error"); // Add error class to highlight the field
+                field.classList.add("error"); 
             } else {
-                field.classList.remove("error"); // Remove error class if field is valid
+                field.classList.remove("error"); 
             }
         });
         return allFieldsValid;
@@ -66,9 +66,9 @@ document.addEventListener("DOMContentLoaded", function () {
         activityFields.forEach(field => {
             if (!field.value.trim()) {
                 allActivitiesValid = false;
-                field.classList.add("error"); // Add error class to highlight the field
+                field.classList.add("error"); 
             } else {
-                field.classList.remove("error"); // Remove error class if field is valid
+                field.classList.remove("error"); 
             }
         });
         return allActivitiesValid;
@@ -81,9 +81,9 @@ document.addEventListener("DOMContentLoaded", function () {
         timeSlotFields.forEach(field => {
             if (!field.value.trim()) {
                 allTimeSlotsValid = false;
-                field.classList.add("error"); // Add error class to highlight the field
+                field.classList.add("error"); 
             } else {
-                field.classList.remove("error"); // Remove error class if field is valid
+                field.classList.remove("error");
             }
         });
         return allTimeSlotsValid;
@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "input[type='time']:nth-child(2)"
       );
     
-      // Event listener to check if startTime is earlier than endTime
+      // Event listener to check if Start Time is earlier than End Time
       startTimeInput.addEventListener("change", validateTime);
       endTimeInput.addEventListener("change", validateTime);
     
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Locate the day-container
             const dayContainer = document.querySelector(`#time-slots-day-${dayNumber}`).closest('.day-container');
         
-            // If it's not the first day, check that the startTime is not earlier than lastEndTime
+            // Check that the start time is not earlier than last end time
             if (startTimeDate < lastTimeDate) {
                 showToast(dayContainer, `Start time cannot be earlier than ${endTimes[dayNumber - 1]}`);
                 startTimeInput.value = "";
@@ -400,11 +400,11 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(data => {
             // Handle success
             if (data.includes("Itinerary has been successfully added")) {
-                showModal("Itinerary has been successfully added!", false); // Success message
+                showModal("Itinerary has been successfully added!", false); 
                 form.reset(); // Reset form
-                document.getElementById("duration-text").innerHTML = ""; // Clear duration text
-                document.getElementById("main-day-container").innerHTML = ""; // Clear day containers
-                document.querySelector('.add-itinerary-btn').style.display = 'none'; // Hide button
+                document.getElementById("duration-text").innerHTML = ""; 
+                document.getElementById("main-day-container").innerHTML = "";
+                document.querySelector('.add-itinerary-btn').style.display = 'none'; 
             } else {
                 showModal("There was an error submitting your itinerary. \nPlease fill up all the required fields.", true); // Error message
             }
@@ -435,7 +435,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const clientNameInput = document.getElementById("client-name");
     const clientNameError = document.getElementById("client-name-error");
 
-    // Regular expressions for Client's Name validation (same as destination)
+    // Regular expressions for Client's Name validation
     const invalidStartRegex = /^[\s][a-zA-Z0-9]/;
     const isOnlySpaceRegex = /^\s*$/;
     const isTooShortRegex = /^.{1}$/;

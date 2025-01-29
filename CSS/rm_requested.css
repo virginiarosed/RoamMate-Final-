@@ -18,7 +18,6 @@
     src: url('../Fonts/Montserrat-Medium.ttf') format('truetype');
 }
 
-/* Reset and global styles */
 * {
     margin: 0;
     padding: 0;
@@ -37,14 +36,14 @@ body, html {
     background-color: #FEFAE0;
     height: 60px;
     position: relative;
-    display: none; /* Hide the header by default */
+    display: none; 
     border-bottom: 3px solid #BC6C25;
   }
   
   .logo1 img {
-    height: 40px; /* Adjust the logo height */
+    height: 40px; 
     max-width: 100%;
-    object-fit: contain; /* Ensure it looks good in the space */
+    object-fit: contain;
     margin-top: 10px;
     margin-left: 10px;
   }
@@ -83,9 +82,9 @@ body, html {
   
   .nav-menu ul li {
     padding: 10px;
-    display: flex; /* Use flexbox for li */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
   }
   
   .nav-menu ul li a {
@@ -93,16 +92,16 @@ body, html {
     text-decoration: none;
     font-size: 20px;
     display: block;
-    width: 100%; /* Ensure the anchor takes full width */
-    text-align: center; /* Center text inside the anchor */
+    width: 100%; 
+    text-align: center; 
   }
   
   .divider2 {
-    grid-column: 1 / -1; /* Span across all columns */
+    grid-column: 1 / -1; 
     width: 80%;
     height: 1px;
-    background-color: #FEFAE0; /* Set color for the divider */
-    margin: 10px auto; /* Center horizontally and add vertical spacing */
+    background-color: #FEFAE0; 
+    margin: 10px auto; 
   }
   
   .nav-menu ul li a:hover {
@@ -219,7 +218,6 @@ body, html {
     margin-bottom: 20px;
 }
 
-/* Container Layout */
 .itinerary-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -235,7 +233,6 @@ body, html {
     width: 100%;
 }
 
-/* Left Part: Itinerary Form */
 .itinerary-form {
     width: 100%;
     padding: 15px;
@@ -298,14 +295,12 @@ body, html {
     margin-bottom: 20px;
 }
 
-/* Right Part: Itinerary Display */
 .itinerary-day {
     width: 100%;
     padding: 15px;
     margin-top: 15px;
 }
 
-/* Style for day containers within itinerary */
 .day-container {
     margin-bottom: 20px;
     padding: 25px;
@@ -317,7 +312,6 @@ body, html {
     font-size: 19px;
 }
 
-/* Label for day time slots */
 .day-container h3 {
     font-family: 'Montserrat-Bold', sans-serif;
     font-size: 24px;
@@ -325,7 +319,6 @@ body, html {
     margin-bottom: 15px;
 }
 
-/* Style for time input fields in day containers */
 .day-container input[type="time"] {
     font-size: 14px;
     padding: 5px;
@@ -333,7 +326,7 @@ body, html {
     border-radius: 10px;
     margin-right: 5px;
     font-family: 'Montserrat-Regular', sans-serif;
-    width: 113px; /* Adjust this width as needed */
+    width: 113px; 
     outline: none;
 }
 
@@ -344,15 +337,14 @@ body, html {
     border-radius: 10px;
     margin-right: 5px;
     font-family: 'Montserrat-Regular', sans-serif;
-    width: 220px; /* Adjust this width as needed */
+    width: 220px; 
     height: 35px;
     outline: none;
 }
 
-/* Textarea inside day containers */
 .day-container textarea {
     margin-left: 10px;
-    width: 150px; /* Fixed width for textarea */
+    width: 150px; 
     height: 37px;
     resize: none;
     border-radius: 5px;
@@ -362,7 +354,6 @@ body, html {
     font-family: 'Montserrat-Regular', sans-serif;
 }
 
-/* Add button */
 .add-itinerary-btn {
     display: none;
     background-color: #BC6C25;
@@ -394,53 +385,48 @@ body, html {
 }
 
 .delete-time-btn {
-    background-color: transparent; /* Transparent background */
-    border: none; /* Remove border */
-    cursor: pointer; /* Pointer cursor on hover */
-    display: inline-flex; /* Align icon inline */
-    align-items: center; /* Center the icon vertically */
-    justify-content: center; /* Center the icon horizontally */
-    padding: 8px; /* Padding around the icon */
+    background-color: transparent; 
+    border: none; 
+    cursor: pointer; 
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 8px; 
 }
 
 .delete-time-btn i {
-    font-size: 15px; /* Size of the trash icon */
-    color: #BC6C25; /* Trash icon color */
-    transition: transform 0.3s, color 0.3s; /* Smooth transition for hover effect */
+    font-size: 15px; 
+    color: #BC6C25; 
+    transition: transform 0.3s, color 0.3s; 
 }
 
-/* Hover effect for trash icon */
 .delete-time-btn:hover i {
-    color: #DDA15E; /* Change icon color on hover */
-    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+    color: #DDA15E; 
+    transform: scale(1.1); 
 }
 
-/* Flexbox for the row */
 .time-slot-row {
     display: flex;
-    align-items: center; /* Align items vertically in the center */
-    gap: 10px; /* Add some space between elements */
-    margin-bottom: 10px; /* Optional: space between rows */
+    align-items: center; 
+    gap: 10px; 
+    margin-bottom: 10px; 
 }
 
-/* Optional: Style the delete button */
 .delete-time-btn {
     background-color: transparent;
     border: none;
-    color: red; /* Red color for trash icon */
+    color: red; 
     cursor: pointer;
     font-size: 18px;
 }
 
-/* Optional: Style input fields */
 .time-slot-row input[type="time"], 
 .time-slot-row input[type="text"] {
     padding: 5px;
-    margin: 0; /* Optional: Remove margin from input fields */
+    margin: 0; 
     font-size: 14px;
 }
 
-/* Back button */
 .back-button {
     display: inline-block;
     background-color: #BC6C25;
@@ -482,39 +468,36 @@ input[type="number"] {
     height: 30px;
 }
 
-/* Style for the Add Time button */
 .add-time-btn {
-    background-color: #BC6C25; /* Button background color */
-    color: #FEFAE0; /* Text color */
-    padding: 5px 10px; /* Padding around the text */
-    font-family: 'Montserrat-Medium', sans-serif; /* Font style */
-    font-size: 14px; /* Font size */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s, transform 0.3s; /* Transition for hover effects */
-    margin-top: 10px; /* Space above the button */
-    display: block; /* Makes the button a block element */
-    margin-left: auto; /* Pushes the button to the center from the left */
+    background-color: #BC6C25; 
+    color: #FEFAE0; 
+    padding: 5px 10px; 
+    font-family: 'Montserrat-Medium', sans-serif; 
+    font-size: 14px; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 10px; 
+    display: block; 
+    margin-left: auto; 
     margin-right: auto;
 }
 
-/* Hover effect for the Add Time button */
 .add-time-btn:hover {
-    background-color: #DDA15E; /* Lighter background color on hover */
-    transform: scale(1.05); /* Slightly larger size on hover */
+    background-color: #DDA15E; 
+    transform: scale(1.05); 
 }
 
-/* Focus effect for the Add Time button */
 .add-time-btn:focus {
-    outline: none; /* Remove default focus outline */
-    box-shadow: 0 0 5px #DDA15E; /* Box shadow effect on focus */
+    outline: none; 
+    box-shadow: 0 0 5px #DDA15E; 
 }
 
 .button-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 5px; /* Space between buttons */
+    gap: 5px; 
     margin-top: 5px;
 }
 
@@ -540,11 +523,10 @@ input[type="number"] {
     margin-bottom: 20px;
 }
 
-/* Style for the modal */
 .modal {
-    display: none; /* Hidden by default */
+    display: none; 
     position: fixed;
-    z-index: 1; /* Sit on top */
+    z-index: 1; 
     left: 0;
     top: 0;
     width: 100%;
@@ -553,7 +535,6 @@ input[type="number"] {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Modal content box */
 .modal-content {
     background-image: url('../Images/rm_mainbg.svg');
     background-color: #ffe8bd;
@@ -571,19 +552,16 @@ input[type="number"] {
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    /* Add position relative to allow positioning of the close button */
     position: relative;
 }
 
-/* Close button */
 .close {
     color: #BC6C25;
     font-size: 28px;
     font-weight: bold;
-    position: absolute;  /* Positioning the close button inside the modal-content */
-    top: 10px; /* Distance from the top of the modal-content */
-    right: 10px; /* Distance from the right of the modal-content */
+    position: absolute;  
+    top: 10px; 
+    right: 10px; 
 }
 
 .close:hover,
@@ -614,9 +592,9 @@ input[type="number"] {
 
 .menu li.active img {
     filter: brightness(1.2); 
-    max-width: 30px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-bottom: 5px; /* Keep consistent spacing */
+    max-width: 30px; 
+    height: auto; 
+    margin-bottom: 5px; 
 }
 
 .menu li:hover {
@@ -633,7 +611,7 @@ input[type="number"] {
 }
 
 .toast {
-    background-color: #f44336; /* Red background for error */
+    background-color: #f44336;
     color: white;
     padding: 10px;
     border-radius: 5px;
@@ -642,14 +620,13 @@ input[type="number"] {
     margin-top: 10px;
     margin-bottom: 10px;
     max-width: 100%;
-    width: 100%; /* Make the toast span the entire width of its container */
+    width: 100%; 
     text-align: center;
     opacity: 0;
     animation: fadeInOut 3s forwards;
     z-index: 999;
 }
 
-/* Animation for the toast */
 @keyframes fadeInOut {
     0% {
         opacity: 0;
@@ -669,15 +646,16 @@ input[type="number"] {
     }
 }
 
+/* Media queries for responsiveness */
 @media (min-width: 900px) and (max-width: 1024px) {
     .html, body {
-        height: 100%; /* Ensure the body and html take up the full height */
-        overflow: auto; /* Ensure overflow is allowed */
+        height: 100%;
+        overflow: auto; 
     }
 
     .sidebar {
         width: 100px;
-        display: block;  /* Show sidebar */
+        display: block; 
         overflow: visible;
     }
     .container {
@@ -685,49 +663,49 @@ input[type="number"] {
         overflow: auto;
     }
     .content {
-        width: 100%;  /* Take 70% width for the content */
-        padding: 20px;  /* Adjust padding */
-        height: auto;  /* Allow content to expand based on its size */
+        width: 100%;  
+        padding: 20px;  
+        height: auto; 
     }
     .requested-img {
         max-width: 100%;  
-        height: auto;  /* Maintain aspect ratio */
+        height: auto;  
     }
     .itinerary-container {
-        display: block;  /* Stack the elements */
+        display: block; 
     }
     .itinerary-form {
-        width: 100%;  /* Ensure the form takes full width */
-        margin-bottom: 20px;  /* Add margin to separate it from the display */
+        width: 100%;  
+        margin-bottom: 20px;  
     }
 
     .itinerary-form label {
-        font-size: 20px; /* Adjust for smaller screens */
+        font-size: 20px;
     }
 
     .itinerary-form textarea {
-        font-size: 17px;  /* Adjust the font size */
-        width: 100%;      /* Make textarea take up the full width of its container */
-        height: 35px;    /* Increase height to a desired value */
+        font-size: 17px;  
+        width: 100%;      
+        height: 35px;    
     }
     .form-group input[type="number"] {
-        font-size: 17px;  /* Adjust the font size */
-        width: 100%;      /* Make input take the full width of its container */
-        height: 35px;     /* Increase height */
+        font-size: 17px;  
+        width: 100%;      
+        height: 35px;     
     }
     .form-row {
-        flex-direction: column; /* Stack form groups vertically */
-        gap: 1px; /* Control the spacing between the form groups */
+        flex-direction: column;
+        gap: 1px;
     }
     .form-group {
-        margin-bottom: 10px; /* Adjust the bottom margin for each form group */
+        margin-bottom: 10px; 
     }
 
     #duration-text {
-        font-size: 20px; /* Increase font size */
+        font-size: 20px; 
     }
     h3 {
-        font-size: 30px;  /* Increase font size */
+        font-size: 30px;
     }
     .day-container input[type="time"] {
         font-size: 20px;
@@ -735,33 +713,33 @@ input[type="number"] {
     }
     .day-container input[type="text"] {
         font-size: 20px;
-        grid-column: 1 / 3; /* Occupy the first two columns */
+        grid-column: 1 / 3; 
         width: 120%;
         padding: 20px;
     }
     .add-time-btn {
-        font-size: 15px;      /* Increase font size */
-        padding: 10px 15px;   /* Increase padding */
-        border-radius: 8px;   /* Optionally, adjust the border-radius for a larger button */
+        font-size: 15px;      
+        padding: 10px 15px;   
+        border-radius: 8px;   
     }
 
     .itinerary-display {
-        width: 100%;  /* Ensure the display takes full width */
+        width: 100%;  
     }
     .itinerary-form h1 {
-        font-size: 50px;  /* Adjust the font size */
+        font-size: 50px;  
     }
 }
 
 @media screen and (max-width: 900px) {
     .html, body {
-        height: 100%; /* Ensure the body and html take up the full height */
-        overflow: auto; /* Ensure overflow is allowed */
+        height: 100%; 
+        overflow: auto; 
     }
 
     .sidebar {
         width: 100px;
-        display: block;  /* Show sidebar */
+        display: block;  
         overflow: visible;
     }
     .container {
@@ -769,49 +747,49 @@ input[type="number"] {
         overflow: auto;
     }
     .content {
-        width: 100%;  /* Take 70% width for the content */
-        padding: 20px;  /* Adjust padding */
-        height: auto;  /* Allow content to expand based on its size */
+        width: 100%;  
+        padding: 20px;  
+        height: auto;  
     }
     .requested-img {
         max-width: 100%;  
-        height: auto;  /* Maintain aspect ratio */
+        height: auto;  
     }
     .itinerary-container {
-        display: block;  /* Stack the elements */
+        display: block; 
     }
     .itinerary-form {
-        width: 100%;  /* Ensure the form takes full width */
-        margin-bottom: 20px;  /* Add margin to separate it from the display */
+        width: 100%; 
+        margin-bottom: 20px;  
     }
 
     .itinerary-form label {
-        font-size: 20px; /* Adjust for smaller screens */
+        font-size: 20px; 
     }
 
     .itinerary-form textarea {
-        font-size: 17px;  /* Adjust the font size */
-        width: 100%;      /* Make textarea take up the full width of its container */
-        height: 35px;    /* Increase height to a desired value */
+        font-size: 17px;  
+        width: 100%;      
+        height: 35px;    
     }
     .form-group input[type="number"] {
-        font-size: 17px;  /* Adjust the font size */
-        width: 100%;      /* Make input take the full width of its container */
-        height: 35px;     /* Increase height */
+        font-size: 17px;  
+        width: 100%;
+        height: 35px; 
     }
     .form-row {
-        flex-direction: column; /* Stack form groups vertically */
-        gap: 1px; /* Control the spacing between the form groups */
+        flex-direction: column;
+        gap: 1px; 
     }
     .form-group {
-        margin-bottom: 10px; /* Adjust the bottom margin for each form group */
+        margin-bottom: 10px;
     }
 
     #duration-text {
-        font-size: 20px; /* Increase font size */
+        font-size: 20px; 
     }
     h3 {
-        font-size: 30px;  /* Increase font size */
+        font-size: 30px; 
     }
     .day-container input[type="time"] {
         font-size: 20px;
@@ -819,21 +797,21 @@ input[type="number"] {
     }
     .day-container input[type="text"] {
         font-size: 20px;
-        grid-column: 1 / 3; /* Occupy the first two columns */
+        grid-column: 1 / 3; 
         width: 120%;
         padding: 20px;
     }
     .add-time-btn {
-        font-size: 15px;      /* Increase font size */
-        padding: 10px 15px;   /* Increase padding */
-        border-radius: 8px;   /* Optionally, adjust the border-radius for a larger button */
+        font-size: 15px;
+        padding: 10px 15px;
+        border-radius: 8px;
     }
 
     .itinerary-display {
-        width: 100%;  /* Ensure the display takes full width */
+        width: 100%;
     }
     .itinerary-form h1 {
-        font-size: 50px;  /* Adjust the font size */
+        font-size: 50px;
     }
 }
 
@@ -842,51 +820,51 @@ input[type="number"] {
         overflow: auto;
     }
     .sidebar {
-        display: none;  /* Hide sidebar */
+        display: none;
     }
     .container {
-        display: block;  /* Stack the content */
+        display: block;
         border: none;
     }
     .content {
-        width: 100%; /* Full width for content */
-        padding: 20px; /* Adjust padding if necessary */
+        width: 100%;
+        padding: 20px;
         height: 100vh;
     }
     .requested-img {
         max-width: 100%;  
-        height: auto;    /* Maintain aspect ratio */
+        height: auto;
         margin-bottom: 10px;
     }
     .itinerary-container {
-        display: block;  /* Stack the elements */
+        display: block;
         min-height: 40vh;
     }
     .itinerary-form {
-        width: 100%; /* Ensure the form takes full width */
-        margin-bottom: 20px; /* Add margin to separate it from the display */
+        width: 100%; 
+        margin-bottom: 20px;
 
     }
     .itinerary-form label {
-        font-size: 16px; /* Adjust for smaller screens */
+        font-size: 16px; 
     }
     .itinerary-form textarea {
-        font-size: 13px;  /* Adjust the font size */
+        font-size: 13px;
         padding: -20px;
-        width: 100%;      /* Make textarea take up the full width of its container */
-        height: 30px;    /* Increase height to a desired value */
+        width: 100%;
+        height: 30px; 
     }
     .form-group input[type="number"] {
-        font-size: 14px;  /* Adjust the font size */
-        padding: 12px;    /* Add padding for better appearance */
-        width: 100%;      /* Make input take the full width of its container */
-        height: 25px;     /* Increase height */
+        font-size: 14px;
+        padding: 12px;
+        width: 100%; 
+        height: 25px;
     }
     #duration-text {
-        font-size: 16px; /* Increase font size */
+        font-size: 16px;
     }
     h3 {
-        font-size: 20px;  /* Increase font size */
+        font-size: 20px;
     }
     .day-container input[type="time"] {
         font-size: 20px;
@@ -894,14 +872,14 @@ input[type="number"] {
     }
     .day-container input[type="text"] {
         font-size: 20px;
-        grid-column: 1 / 3; /* Occupy the first two columns */
+        grid-column: 1 / 3; 
         width: 120%;
         padding: 20px;
     }
     .add-time-btn {
-        font-size: 14px;      /* Increase font size */
-        padding: 8px 16px;   /* Increase padding */
-        border-radius: 8px;   /* Optionally, adjust the border-radius for a larger button */
+        font-size: 14px; 
+        padding: 8px 16px;
+        border-radius: 8px;
     }
     .day-container input[type="time"] {
         font-size: 14px;
@@ -909,65 +887,63 @@ input[type="number"] {
     }
     .day-container input[type="text"] {
         font-size: 14px;
-        grid-column: 1 / 3; /* Occupy the first two columns */
+        grid-column: 1 / 3; 
         width: 120%;
         padding: 14px;
     }
     .add-time-btn {
-        font-size: 12px;      /* Increase font size */
-        padding: 6px 14px;   /* Increase padding */
-        border-radius: 8px;   /* Optionally, adjust the border-radius for a larger button */
+        font-size: 12px; 
+        padding: 6px 14px;   
+        border-radius: 8px;   
     }
     .itinerary-display {
-        width: 100%; /* Ensure the display takes full width */
+        width: 100%;
     }
     .itinerary-form h1 {
-        font-size: 24px;  /* Adjust this value to decrease the font size */
+        font-size: 24px; 
     }
     .add-itinerary-btn {
-        font-size: 14px; /* Increase font size */
-        padding: 9px 19px; /* Increase padding for larger button */
+        font-size: 14px; 
+        padding: 9px 19px; 
     }
     .form-row {
-        flex-direction: column; /* Stack form groups vertically */
-        gap: 1px; /* Control the spacing between the form groups */
+        flex-direction: column; 
+        gap: 1px; 
     }
     .form-group {
-        margin-bottom: 10px; /* Adjust the bottom margin for each form group */
+        margin-bottom: 10px;
     }
     .day-container .form-group {
         display: grid;
-        grid-template-columns: 1fr 1fr auto; /* Add a third column for the button */
-        gap: 10px; /* Maintain spacing between elements */
-        align-items: center; /* Align items vertically */
+        grid-template-columns: 1fr 1fr auto; 
+        gap: 10px; 
+        align-items: center; 
     }
-
-    /* Ensure the activity input and delete button share the row */
+    
     .day-container input[type="text"] {
-        grid-column: 1 / 3; /* Occupy the first two columns */
+        grid-column: 1 / 3; 
         width: 90%;
     }
 
     .day-container .delete-time-btn {
-        grid-column: 3; /* Place the button in the third column */
-        justify-self: start; /* Align the button to the start of its column */
-        margin-left: -35px; /* Adjust the value to move the button slightly left */
+        grid-column: 3; 
+        justify-self: start; 
+        margin-left: -35px; 
     }
 
-    /* Ensure time inputs remain in their own row */
     .day-container input[type="time"] {
         width: 100%; /* Keep responsive */
     }
 
     .day-container .divider {
-        grid-column: 1 / -1; /* Span across all columns */
+        grid-column: 1 / -1; 
         width: 100%;
         height: 1px;
-        background-color: #BC6C25; /* Set color for the divider */
-        margin: 10px 0; /* Add spacing around the divider */
+        background-color: #BC6C25; 
+        margin: 10px 0; 
     }
 
     .container {
-        border: none; /* Removes the border on screens smaller than 768px */
+        border: none; 
     }
 }

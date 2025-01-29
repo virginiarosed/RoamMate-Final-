@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 modal.style.display = 'none';
                 modal.remove();
                 
-                // Delay the page reload by 3 seconds (to allow the toast to fade)
+                // Delay the page reload by 2 seconds (to allow the toast to fade)
                 setTimeout(() => {
                     location.reload(); // Reload the page after the toast fades
                 }, 2000); // Adjust time to match your toast's duration
@@ -301,10 +301,8 @@ function showItineraryDetails(itineraryId, data) {
         return `${start} - ${end}`;
     }
 
-
     // Format the itinerary date range
     const formattedDateRange = formatDateRange(itinerary.start_date, itinerary.end_date);
-
 
     modal.innerHTML = `
         <div class="modal-content">
@@ -414,7 +412,7 @@ function openEditDayModal(dayId, itineraryId) {
     const modal = document.createElement('div');
     modal.classList.add('modal');
 
-    // Fetch the day details using dayId and itineraryId
+    // Fetch the day details
     const fetchUrl = `../PHP/fetch_day_details.php?day_id=${dayId}&itinerary_id=${itineraryId}`;
     fetch(fetchUrl)
         .then(response => response.json())
@@ -487,7 +485,7 @@ function openEditDayModal(dayId, itineraryId) {
 }
 
 function updateDayDetails(updatedDayData, modal) {
-    console.log('Updating day details with data:', updatedDayData); // Debugging statement
+    console.log('Updating day details with data:', updatedDayData);
 
     // Check if any updates were actually made
     const isUpdated = updatedDayData.start_time !== updatedDayData.original_start_time ||
@@ -509,14 +507,13 @@ function updateDayDetails(updatedDayData, modal) {
     })
     .then(response => response.json())
     .then(data => {
-        console.log('Update response:', data); // Debugging statement
+        console.log('Update response:', data);
 
         if (data.success) {
             showToast('Day details updated successfully', 'success');
             modal.style.display = 'none';
             modal.remove();
 
-            // Update the DOM with the new data
             const dayRow = document.querySelector(`button[data-day-id="${updatedDayData.day_id}"]`).closest('tr');
             dayRow.querySelector('td:nth-child(1)').textContent = `${convertTo12HourFormat(updatedDayData.start_time)} - ${convertTo12HourFormat(updatedDayData.end_time)}`;
             dayRow.querySelector('td:nth-child(2)').textContent = updatedDayData.activity;
@@ -548,7 +545,6 @@ function deleteItinerary(itineraryId, modal) {
         </div>
     `;
     
-    // Append the modal to the body
     document.body.appendChild(confirmModal);
     confirmModal.style.display = 'block';
     
@@ -582,16 +578,16 @@ function deleteItinerary(itineraryId, modal) {
                 modal.style.display = 'none';
                 modal.remove();
                 
-                // Optionally, remove the deleted itinerary from the list if it's displayed elsewhere
+                // Remove the deleted itinerary from the list if it's displayed elsewhere
                 const itineraryButton = document.querySelector(`[data-id="${itineraryId}"]`);
                 if (itineraryButton) {
                     itineraryButton.remove();
                 }
                 
-                // Reload the page after the toast disappears (3 seconds after showing the toast)
+                // Reload the page after the toast disappears (2 seconds after showing the toast)
                 setTimeout(() => {
                     location.reload(); // This reloads the page
-                }, 2000); // Adjust time to match your toast's duration
+                }, 2000);
             } else {
                 showToast('Error deleting itinerary', 'error');
             }
@@ -614,7 +610,6 @@ function deleteItinerary(itineraryId, modal) {
         confirmModal.remove();
     });
 }
-
 
 // Function to group days by day_number
 function groupByDay(days) {
@@ -639,5 +634,5 @@ function showToast(message, type = 'success') {
     // Remove the toast after 3 seconds
     setTimeout(() => {
         toast.remove();
-    }, 3000); // Adjust time as needed
+    }, 3000); 
 }

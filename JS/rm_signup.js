@@ -94,7 +94,7 @@ function checkPasswordValidity() {
 
 const emailInput = document.getElementById('email');
 const emailIcon = document.querySelector('.email-icon');
-const emailError = document.getElementById('email-error'); // Reference to the error message div
+const emailError = document.getElementById('email-error');
 
 emailInput.addEventListener('input', function () {
     const emailValue = emailInput.value;
@@ -102,7 +102,7 @@ emailInput.addEventListener('input', function () {
     // Only check if the email format is valid
     const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (regex.test(emailValue)) {
-        // Make an AJAX request to check if the email is already in use
+        // Make a request to check if the email is already in use
         fetch('../PHP/check_email.php', {
             method: 'POST',
             headers: {

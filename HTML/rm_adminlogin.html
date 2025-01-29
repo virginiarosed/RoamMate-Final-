@@ -43,7 +43,6 @@
     const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
     passwordInput.setAttribute('type', type);
 
-    // Toggle the class for styling
     passwordInput.classList.toggle('revealed-password');
 
     // Toggle the eye icon appearance
@@ -69,7 +68,7 @@
         // Clear any previous content
         messageContainer.innerHTML = '';
 
-        // Show the error message (e.g., "Invalid credentials") only if the account is not locked
+        // Show the error message
         if (errorMessage !== 'Locked') {
             messageContainer.innerHTML = `<div class="error-message">${errorMessage}</div>`;
         }
@@ -104,7 +103,7 @@
             if (remainingTime <= 0) {
                 clearInterval(countdownInterval); // Stop the countdown
 
-                // Show the account unlocked message only
+                // Show the account unlocked message
                 countdownElement.innerHTML = '<span style="color: green;">Account unlocked, you can try logging in again.</span>';
 
                 // Clear query parameters after lockout expires
@@ -115,7 +114,7 @@
                 const secondsLeft = remainingTime % 60;
                 countdownElement.innerHTML = `Due to multiple login attempts, the account is locked for ${minutesLeft} minutes and ${secondsLeft} seconds.`;
             }
-        }, 1000); // Update every second
+        }, 1000);
     }
 };
 

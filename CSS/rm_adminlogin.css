@@ -13,7 +13,6 @@
     src: url('../Fonts/Gusto-Bold.ttf') format('truetype');
 }
 
-/* Body styles */
 body {
     font-family: 'Montserrat-Regular', sans-serif;
     background-image: url('../Images/rm_contentbg.svg');
@@ -58,16 +57,16 @@ body {
 }
 
 .forgot-logo-container {
-    text-align: center; /* Centers the logo horizontally */
-    margin-bottom: 1px; /* Adds some space below the logo */
+    text-align: center;
+    margin-bottom: 1px;
 }
 
-/* Style for the logo image */
+
 .forgot_logo {
-    max-width: 100%; /* Ensures the logo image is responsive and doesn't overflow its container */
-    height: auto; /* Maintains the aspect ratio */
-    width: 100px; /* You can adjust the width based on your design */
-    animation: fadeInLogo 1s ease-out; /* Adds a fade-in animation */
+    max-width: 100%; 
+    height: auto;
+    width: 100px; 
+    animation: fadeInLogo 1s ease-out; 
 }
 
 .title-container {
@@ -123,7 +122,7 @@ input[type="email"], input[type="password"] {
     border-radius: 4px;
     cursor: pointer;
     width: 30%;
-    margin: 0 auto; /* Centers the button horizontally */
+    margin: 0 auto;
     margin-bottom: -15px;
 }
 
@@ -150,12 +149,12 @@ input[type="email"], input[type="password"] {
 
 .password-container {
     position: relative;
-    width: 100%; /* Full width within the container */
+    width: 100%;
 }
 
 .password-container input {
-    width: 100%; /* Full width for input */
-    padding-right: 30px; /* Add padding for the icon */
+    width: 100%;
+    padding-right: 30px; 
 }
 
 .password-container i {
@@ -195,7 +194,7 @@ input[type="email"], input[type="password"] {
     border-radius: 4px;
     cursor: pointer;
     width: 40%;
-    margin: 0 auto; /* Centers the button horizontally */
+    margin: 0 auto;
     margin-top: 5px;
     margin-bottom: -15px;
 }
@@ -207,16 +206,16 @@ input[type="email"], input[type="password"] {
 
 .forgot {
     display: block;
-    margin: 10px auto 20px auto; /* Centers the image and adds margin below */
-    max-width: 90%; /* Ensures the image doesn't exceed container width */
-    height: auto; /* Maintains aspect ratio */
+    margin: 10px auto 20px auto;
+    max-width: 90%;
+    height: auto; 
 }
 
 .reset {
     display: block;
-    margin: 10px auto 23px auto; /* Centers the image and adds margin below */
-    max-width: 87%; /* Ensures the image doesn't exceed container width */
-    height: auto; /* Maintains aspect ratio */
+    margin: 10px auto 23px auto; 
+    max-width: 87%; 
+    height: auto;
 }
 
 .reset-button {
@@ -229,10 +228,10 @@ input[type="email"], input[type="password"] {
     border-radius: 4px;
     cursor: pointer;
     width: 40%;
-    margin: 0 auto; /* Centers the button horizontally */
+    margin: 0 auto; 
     margin-top: 20px;
     margin-bottom: 5px;
-    display: block; /* Ensures margin auto works */
+    display: block; 
 }
 
 .reset-button:hover {
@@ -240,11 +239,9 @@ input[type="email"], input[type="password"] {
     background: #dda15e;
 }
 
-
-/* Animation for the logo */
 @keyframes zoomOutSpin {
     0% {
-        transform: scale(2) rotate(0deg); /* Start zoomed-in and no rotation */
+        transform: scale(2) rotate(0deg); 
         opacity: 0;
     }
     50% {
@@ -256,13 +253,12 @@ input[type="email"], input[type="password"] {
     }
 }
 
-/* Apply animation to the logo */
 .logo {
     animation: zoomOutSpin 2s ease-out; 
     animation-fill-mode: forwards;
 }
 
-
+/* Media queries for responsiveness */
 @media (max-width: 600px) {
     .form-header {
         flex-direction: column;
@@ -274,11 +270,10 @@ input[type="email"], input[type="password"] {
     }
 
     .login-form-container {
-        max-width: 80%; /* Utilize more screen space */
+        max-width: 80%; 
     }
 }
 
-/* Style for error messages */
 .error-message {
     color: red;
     font-size: 14px;

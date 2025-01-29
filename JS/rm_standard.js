@@ -43,8 +43,8 @@ function updateDurationTextAndDays() {
         }
     } else {
         durationDisplay.textContent = 'Please enter a valid number of days.';
-        nightsField.value = '';  // Reset nights field if days is invalid
-        nightsField.disabled = true; // Disable nights input field when days is invalid
+        nightsField.value = ''; 
+        nightsField.disabled = true; 
     }
 }
 
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
             fetch(`../PHP/fetch_itinerary_details.php?id=${itineraryId}`)
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data);  // Log the data to check the structure
+                    console.log(data);
                     displayModal(data);
                 })
                 .catch(error => {
@@ -196,19 +196,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function openEditDayModal(dayId, itineraryId, destination, lodging) {
-        console.log(`Opening edit modal for dayId: ${dayId}, itineraryId: ${itineraryId}`); // Debugging statement
+        console.log(`Opening edit modal for dayId: ${dayId}, itineraryId: ${itineraryId}`); 
     
         const modal = document.createElement('div');
         modal.classList.add('modal');
     
-        // Fetch the day details using dayId and itineraryId
+        // Fetch the day details
         const fetchUrl = `../PHP/fetch_standard_details.php?day_id=${dayId}&itinerary_id=${itineraryId}`;
-        console.log(`Fetching day details from URL: ${fetchUrl}`); // Debugging statement
+        console.log(`Fetching day details from URL: ${fetchUrl}`); 
     
         fetch(fetchUrl)
             .then(response => response.json())
             .then(day => {
-                console.log('Fetched day details:', day); // Debugging statement
+                console.log('Fetched day details:', day); 
     
                 if (day.error) {
                     console.error('Error fetching day details:', day.error);
@@ -311,8 +311,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Add the notification to the container
         const container = document.getElementById('notification-container');
         container.appendChild(notification);
-    
-        // Auto-dismiss the notification after 3 seconds
+
         setTimeout(() => {
             notification.style.opacity = '0'; // Fade out
             setTimeout(() => {
@@ -561,7 +560,6 @@ function updateDurationTextAndDays() {
     }
 });
 
-  
     // Delete a time slot and activity
     if (event.target && event.target.closest(".delete-time-btn")) {
       const button = event.target.closest(".delete-time-btn");
