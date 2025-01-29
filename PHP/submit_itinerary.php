@@ -1,8 +1,8 @@
 <?php
-$host = 'localhost'; // Database host
-$dbname = 'roammate_db'; // Database name
-$username = 'root'; // Your database username
-$password = ''; // Your database password
+$host = 'localhost'; 
+$dbname = 'roammate_db'; 
+$username = 'root'; 
+$password = ''; 
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // Redirect to a success page or show a success message
+    // Redirect to a success page
     header("Location: ../PHP/rm_standard.php");
     exit();
 }

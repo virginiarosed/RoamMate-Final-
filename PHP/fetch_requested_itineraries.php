@@ -1,5 +1,5 @@
 <?php
-// Database connection
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -11,7 +11,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Get the date range from the request (if provided)
+// Get the date range
 $start_date = isset($_GET['start_date']) ? $_GET['start_date'] : '';
 $end_date = isset($_GET['end_date']) ? $_GET['end_date'] : '';
 

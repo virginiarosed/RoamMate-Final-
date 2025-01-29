@@ -19,7 +19,7 @@
 </head>
 <body>
     <header class="header">
-        <!-- Logo Image -->
+        
         <div class="logo1">
           <img src="../Images/RoamMate_title.svg" alt="Logo" />
         </div>
@@ -106,87 +106,87 @@
 
     <script>
         // Function to fetch the number of itineraries and display it
-function fetchStandardCount() {
-    fetch('../PHP/fetch_standard_count.php')  // Make sure this path is correct
-        .then(response => response.json())
-        .then(data => {
-            if (data.count) {
-                // If the count is returned, display it in the div
-                document.getElementById('standardCount').textContent = data.count;
-            } else {
-                // If an error occurs, handle it here
-                console.error('Error fetching itinerary count:', data.error);
-                document.getElementById('standardCount').textContent = 'Error';
-            }
-        })
-        .catch(error => {
-            console.error('Fetch error:', error);
-            document.getElementById('standardCount').textContent = 'Error';
-        });
-}
-
-// Call the function on page load
-document.addEventListener('DOMContentLoaded', fetchStandardCount);
-
-document.addEventListener("DOMContentLoaded", function () {
-    fetchRequestedCount();
-    fetchRequestedItinerariesData(); // Fetch data for the bar graph
-    fetchDestinations(); // Fetch both standard and requested destinations
-
-    // Fetch the count of requested itineraries from the server
-    function fetchRequestedCount() {
-        fetch('../PHP/fetch_requested_count.php')
-            .then(response => response.json())
-            .then(data => {
-                const requestedCountDiv = document.getElementById('requestedCount');
-                
-                // Check if there was an error or if the count is valid
-                if (data.error) {
-                    console.error(data.error);
-                    requestedCountDiv.textContent = "Error loading count";
-                } else {
-                    requestedCountDiv.textContent = data.count; // Display the count
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching requested itineraries count:', error);
-            });
-    }
-
-    // Fetch data for the bar graph
-    function fetchRequestedItinerariesData() {
-        fetch('../PHP/fetch_requested_itineraries_data.php')
-            .then(response => response.json())
-            .then(data => {
-                const ctx = document.getElementById('requestedItinerariesChart').getContext('2d');
-                const chart = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-                        datasets: [{
-                            label: 'Requested Itineraries',
-                            data: data.counts,
-                            backgroundColor: 'rgba(188, 108, 37, 0.2)', // Use the color from rm_home.css
-                            borderColor: 'rgba(188, 108, 37, 1)', // Use the color from rm_home.css
-                            borderWidth: 1,
-                            barThickness: 30 // Adjust the bar thickness
-                        }]
-                    },
-                    options: {
-                        maintainAspectRatio: false, // Allow the chart to fill the container
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
-                        }
+        function fetchStandardCount() {
+            fetch('../PHP/fetch_standard_count.php')  // Make sure this path is correct
+                .then(response => response.json())
+                .then(data => {
+                    if (data.count) {
+                        // If the count is returned, display it in the div
+                        document.getElementById('standardCount').textContent = data.count;
+                    } else {
+                        // If an error occurs, handle it here
+                        console.error('Error fetching itinerary count:', data.error);
+                        document.getElementById('standardCount').textContent = 'Error';
                     }
+                })
+                .catch(error => {
+                    console.error('Fetch error:', error);
+                    document.getElementById('standardCount').textContent = 'Error';
                 });
-            })
-            .catch(error => {
-                console.error('Error fetching requested itineraries data:', error);
-            });
-    }
-});
+        }
+
+        // Call the function on page load
+        document.addEventListener('DOMContentLoaded', fetchStandardCount);
+
+        document.addEventListener("DOMContentLoaded", function () {
+            fetchRequestedCount();
+            fetchRequestedItinerariesData(); // Fetch data for the bar graph
+            fetchDestinations(); // Fetch both standard and requested destinations
+
+            // Fetch the count of requested itineraries from the server
+            function fetchRequestedCount() {
+                fetch('../PHP/fetch_requested_count.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        const requestedCountDiv = document.getElementById('requestedCount');
+                        
+                        // Check if there was an error or if the count is valid
+                        if (data.error) {
+                            console.error(data.error);
+                            requestedCountDiv.textContent = "Error loading count";
+                        } else {
+                            requestedCountDiv.textContent = data.count; // Display the count
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching requested itineraries count:', error);
+                    });
+            }
+
+            // Fetch data for the bar graph
+            function fetchRequestedItinerariesData() {
+                fetch('../PHP/fetch_requested_itineraries_data.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        const ctx = document.getElementById('requestedItinerariesChart').getContext('2d');
+                        const chart = new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                                datasets: [{
+                                    label: 'Requested Itineraries',
+                                    data: data.counts,
+                                    backgroundColor: 'rgba(188, 108, 37, 0.2)', // Use the color from rm_home.css
+                                    borderColor: 'rgba(188, 108, 37, 1)', // Use the color from rm_home.css
+                                    borderWidth: 1,
+                                    barThickness: 30 // Adjust the bar thickness
+                                }]
+                            },
+                            options: {
+                                maintainAspectRatio: false, // Allow the chart to fill the container
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Error fetching requested itineraries data:', error);
+                    });
+            }
+        });
     </script>
 
 <script>

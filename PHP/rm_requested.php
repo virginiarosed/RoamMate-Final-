@@ -95,6 +95,8 @@
                         <p id="duration-text"><b>Duration:</b> 0 Days, 0 Nights</p>
 
                     </div>
+
+                    <!-- Error Messages -->
                     <div id="client-name-error" style="color: red; display: none; font-size: 15px; text-align: center; margin: 0 auto; margin-bottom: 10px;">
                         <p>Client's name cannot start with a space or special characters and must be longer than one letter.</p>
                     </div>

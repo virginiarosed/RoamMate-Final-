@@ -1,5 +1,5 @@
 <?php
-// Database connection
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -25,6 +25,5 @@ if ($result) {
     echo json_encode(['error' => 'Failed to fetch data']);
 }
 
-// Close the database connection
 mysqli_close($conn);
 ?>

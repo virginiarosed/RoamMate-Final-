@@ -1,5 +1,5 @@
 <?php
-// Database connection
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -11,7 +11,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Retrieve main itinerary data
 $client_name = $_POST['client-name'];
 $destination = $_POST['destination'];
 $start_date = $_POST['start_date'];

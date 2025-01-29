@@ -87,7 +87,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <input type="email" name="email" id="email" placeholder="Email" class="input-field full-width" required>
                     <i class="fas fa-envelope email-icon"></i>
                 </div>
-                                
+                
+                <!-- Password Input -->
                 <div class="form-group row">
                     <div class="password-container">
                         <input type="password" name="password" id="password" placeholder="Password" class="input-field half-width" required>
@@ -123,6 +124,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         </li>
                     </ul>
                     </div>
+
+                    <!-- Company Code Input -->
                     <div class="form-group">
                         <input
                             type="text"
@@ -134,6 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         />
                     </div>
 
+                    <!-- Error Messages -->
                     <div id="email-error" style="color: red; display: none; font-size: 15px; text-align: center; margin: 0 auto; margin-bottom: 10px;">
                         <p>This email is already in use. Please choose another one.</p>
                     </div>
@@ -143,7 +147,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div id="company-code-error" style="color: red; display: none; font-size: 15px; text-align: center; margin: 0 auto; margin-bottom: 10px;">
                         <p>Invalid company code. Please try again.</p>
                     </div>
-                <button type="submit" class="signup-button">Sign Up</button>                 
+
+                <button type="submit" class="signup-button">Sign Up</button> 
+                                
                 <p class="login-text">Already have an account? <a href="../HTML/rm_adminlogin.html">Log In</a></p>
             </div>
         </form>

@@ -1,5 +1,5 @@
 <?php
-// Database connection
+
 $servername = "localhost";
 $username = "root"; 
 $password = "";     
@@ -26,11 +26,12 @@ if ($result->num_rows > 0) {
     // Token valid, allow password reset
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $newPassword = $_POST['password'];
+        $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
 
         // Update the password
-        $sql = "UPDATE admin_users SET password = SHA2(?, 256) WHERE email = (SELECT email FROM password_resets WHERE token = ?)";
+        $sql = "UPDATE admin_users SET password = ? WHERE email = (SELECT email FROM password_resets WHERE token = ?)";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ss", $newPassword, $token);
+        $stmt->bind_param("ss", $hashedPassword, $token);
         $stmt->execute();
 
         // Delete the token from the database after use

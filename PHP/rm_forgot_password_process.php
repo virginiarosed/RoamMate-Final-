@@ -4,7 +4,6 @@ require '../vendor/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// Database connection
 $servername = "localhost";
 $username = "root"; 
 $password = "";     
@@ -12,7 +11,6 @@ $dbname = "roammate_db";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }

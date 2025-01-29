@@ -1,10 +1,10 @@
 <?php
 // Get the email and new password
 $email = $_POST['email'];
-$password = $_POST['password']; // You should hash the password before storing it
+$password = $_POST['password']; 
 
 // Hash the new password
-$hashedPassword = SHA2($password, 256);
+$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
 // Database connection
 $conn = new mysqli('localhost', 'root', '', 'roammate_db');

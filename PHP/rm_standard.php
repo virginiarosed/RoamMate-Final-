@@ -18,7 +18,7 @@
 </head>
 <body>
     <header class="header">
-        <!-- Logo Image -->
+        
         <div class="logo1">
           <img src="../Images/RoamMate_title.svg" alt="Logo" />
         </div>
@@ -60,7 +60,7 @@
             <img src="../Images/rm_standard_title.svg" alt="Standard Itinerary Title" class="standard-img">
                 
             <div class="itinerary-container">
-                <!-- Left Part: Form -->
+                
                 <form id="itinerary-form" method="POST" action="../PHP/submit_itinerary.php">
                     <div class="itinerary-form">
                         <h1>Add Standard Itinerary</h1>
@@ -114,14 +114,14 @@
                 <div class="itinerary-display">
                     <h1>Added Standard Itinerary</h1>
                     <div id="itinerary-buttons" class="button-grid"></div>
-                        <!-- Buttons will be dynamically inserted here -->
+                        <!-- List of itineraries displayed as buttons will be dynamically inserted here -->
                     </div>
                 </div>
             </div>
             <div id="itinerary-modal" class="modal">
                 <div id="modal-content" class="modal-content">
                     <!-- Modal content will be populated here -->
-                    <button id="modal-close" class="modal-close">&times;</button> <!-- Close button with times symbol -->
+                    <button id="modal-close" class="modal-close">&times;</button> <!-- Close button -->
                 </div>
             </div>
             <div id="notification-container"></div>

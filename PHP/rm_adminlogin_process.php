@@ -1,5 +1,5 @@
 <?php
-// Database connection
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -7,7 +7,6 @@ $dbname = "roammate_db";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -19,9 +18,9 @@ session_start();
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-// Define maximum attempts and lockout duration
+// Maximum attempts and lockout duration
 $maxAttempts = 3;
-$lockoutTime = 5; // 5 minutes (no need to multiply by 60)
+$lockoutTime = 5; // 5 minutes 
 
 // Query to check login attempts and lockout expiry time
 $sql = "SELECT failed_attempts, last_failed_attempt, lockout_expiry, password FROM admin_users WHERE email = ?";
@@ -44,7 +43,7 @@ if ($result->num_rows === 1) {
         exit();
     }
 
-    // Check password using password_verify() instead of SHA2
+    // Check password using password_verify()
     if (password_verify($password, $user['password'])) {
         // Reset failed attempts and lockout expiry on successful login
         $sql = "UPDATE admin_users SET failed_attempts = 0, lockout_expiry = NULL WHERE email = ?";

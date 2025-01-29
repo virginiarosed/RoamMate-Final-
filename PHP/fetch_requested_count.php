@@ -1,14 +1,12 @@
 <?php
-// Database connection variables
-$host = 'localhost';  // Your database host
-$username = 'root';    // Your database username
-$password = '';        // Your database password
-$dbname = 'roammate_db';  // Your database name
 
-// Create the connection
+$host = 'localhost'; 
+$username = 'root'; 
+$password = ''; 
+$dbname = 'roammate_db';  
+
 $conn = mysqli_connect($host, $username, $password, $dbname);
 
-// Check if the connection was successful
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }

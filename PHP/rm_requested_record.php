@@ -18,7 +18,7 @@
 </head>
 <body>
     <header class="header">
-        <!-- Logo Image -->
+        
         <div class="logo1">
           <img src="../Images/RoamMate_title.svg" alt="Logo" />
         </div>
@@ -72,7 +72,7 @@
             <div class="requested-record-container"></div>
         </div>
         
-    <script src="rm_requested_record.js"></script>
+    <script src="../JS/rm_requested_record.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
