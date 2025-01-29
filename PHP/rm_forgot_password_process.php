@@ -59,7 +59,7 @@ if ($result->num_rows > 0) {
         $mail->addAddress($email); // Add the user's email
 
         // Content
-        $resetLink = "http://localhost/webdev_project/rm_reset_password.php?token=" . $token;
+        $resetLink = "http://localhost/webdev_project/PHP/rm_reset_password.php?token=" . $token;
         $mail->isHTML(true);
         $mail->Subject = 'Password Reset Request';
         $mail->Body = "
